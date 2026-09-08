@@ -1,0 +1,198 @@
+/*
+ * Habillage de Django Admin à la charte SchoolConnect (mêmes tokens que
+ * frontend/src/index.css : vert forêt / terre cuite / doré, Source Serif 4 + IBM Plex Sans).
+ * Ne redéfinit que les custom properties déjà exposées par admin/css/base.css et
+ * dark_mode.css — aucun template de base n'est copié/modifié.
+ */
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/ibm-plex-sans-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/ibm-plex-sans-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/source-serif-4-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/source-serif-4-latin-700-normal.woff2') format('woff2');
+}
+
+:root,
+html[data-theme='light'] {
+  --primary: #1c6e64;
+  --secondary: #145c56;
+  --accent: #d9a441;
+  --primary-fg: #ffffff;
+
+  --body-fg: #1c1a15;
+  --body-bg: #faf9f6;
+  --body-quiet-color: #66604f;
+  --body-medium-color: #3a362c;
+  --body-loud-color: #1c1a15;
+
+  --header-color: #ffffff;
+  --header-branding-color: #d9a441;
+  --header-bg: #0b2e2f;
+  --header-link-color: #ffffff;
+
+  --breadcrumbs-fg: #e4f0ee;
+  --breadcrumbs-link-fg: #ffffff;
+  --breadcrumbs-bg: #145c56;
+
+  --link-fg: #1c6e64;
+  --link-hover-color: #0b2e2f;
+  --link-selected-fg: #a67a2e;
+
+  --hairline-color: #e7e3da;
+  --border-color: #d3cdbf;
+
+  --error-fg: #b3412a;
+
+  --message-success-bg: #e6f2ea;
+  --message-warning-bg: #faf0dc;
+  --message-error-bg: #fbe9e4;
+
+  --darkened-bg: #f3f1ec;
+  --selected-bg: #faf0dc;
+  --selected-row: #faf0dc;
+
+  --button-fg: #ffffff;
+  --button-bg: #1c6e64;
+  --button-hover-bg: #145c56;
+  --default-button-bg: #145c56;
+  --default-button-hover-bg: #0b2e2f;
+  --close-button-bg: #847d6c;
+  --close-button-hover-bg: #66604f;
+  --delete-button-bg: #b3412a;
+  --delete-button-hover-bg: #8f3220;
+
+  --object-tools-fg: #ffffff;
+  --object-tools-bg: #a8532e;
+  --object-tools-hover-bg: #8a4224;
+
+  --font-family-primary: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #1f8073;
+    --primary-fg: #ffffff;
+
+    --body-fg: #f3f1ec;
+    --body-bg: #1c1a15;
+    --body-quiet-color: #d3cdbf;
+    --body-medium-color: #e7e3da;
+    --body-loud-color: #ffffff;
+
+    --header-bg: #081f20;
+    --header-branding-color: #d9a441;
+
+    --breadcrumbs-bg: #0b2e2f;
+    --breadcrumbs-link-fg: #e7e3da;
+
+    --link-fg: #4fb3a5;
+    --link-hover-color: #7fcabe;
+    --link-selected-fg: #d9a441;
+
+    --hairline-color: #3a362c;
+    --border-color: #3a362c;
+
+    --darkened-bg: #241f18;
+    --selected-bg: #241f18;
+    --selected-row: #2a2115;
+
+    --button-bg: #1f8073;
+    --button-hover-bg: #1c6e64;
+    --default-button-bg: #1c6e64;
+    --default-button-hover-bg: #145c56;
+    --close-button-bg: #66604f;
+    --close-button-hover-bg: #847d6c;
+  }
+}
+html[data-theme='dark'] {
+  --primary: #1f8073;
+  --primary-fg: #ffffff;
+
+  --body-fg: #f3f1ec;
+  --body-bg: #1c1a15;
+  --body-quiet-color: #d3cdbf;
+  --body-medium-color: #e7e3da;
+  --body-loud-color: #ffffff;
+
+  --header-bg: #081f20;
+  --header-branding-color: #d9a441;
+
+  --breadcrumbs-bg: #0b2e2f;
+  --breadcrumbs-link-fg: #e7e3da;
+
+  --link-fg: #4fb3a5;
+  --link-hover-color: #7fcabe;
+  --link-selected-fg: #d9a441;
+
+  --hairline-color: #3a362c;
+  --border-color: #3a362c;
+
+  --darkened-bg: #241f18;
+  --selected-bg: #241f18;
+  --selected-row: #2a2115;
+
+  --button-bg: #1f8073;
+  --button-hover-bg: #1c6e64;
+  --default-button-bg: #1c6e64;
+  --default-button-hover-bg: #145c56;
+  --close-button-bg: #66604f;
+  --close-button-hover-bg: #847d6c;
+}
+
+/* Titres en serif, comme sur le reste de l'app — les variables ci-dessus ne couvrent
+   que les couleurs, Django n'expose pas de "font de titre" séparée. */
+#branding h1,
+#branding h1 a,
+#content h1,
+.dashboard .module h2,
+.module caption,
+.module h2,
+fieldset h2 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+}
+
+#branding h1 {
+  letter-spacing: -0.01em;
+}
+
+#branding h1 a:link,
+#branding h1 a:visited {
+  color: var(--header-color);
+}
